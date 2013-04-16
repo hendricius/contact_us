@@ -1,5 +1,7 @@
 class ContactUs::ContactsController < ApplicationController
 
+  skip_before_filter :require_login
+
   def create
     @contact = ContactUs::Contact.new(params[:contact_us_contact])
 
